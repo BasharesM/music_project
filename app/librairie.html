@@ -1,18 +1,5 @@
-<div >
-<br>
-	Recherche <input type="text" ng-model="recherche">
+Recherche <input type="text" ng-model="recherche">
 
-<br><br>
-
-<table>
-    <tr>
-        <td>Nom</td>
-        <td>Artiste</td>
-        <td>Album</td>
-        <td>Année</td>
-        <td>Durée</td>
-        <td></td>
-    </tr>
-    <tr row ng-repeat="song in songs | filter:recherche "></tr>
-</table>
-</div>
+<section class="tiles">
+    <article row ng-repeat="song in songs| filter:recherche"></article>
+</section>

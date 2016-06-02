@@ -1,11 +1,12 @@
-<tr>
-    <td><a href="#/song/{{song.id}}">{{song.name}}</a></td>
-    <td>{{song.artist}}</td>
-    <td>{{song.album}}</td>
-    <td>{{song.year}}</td>
-    <td>{{song.duration | duree}}</td>
-    <td><input type='button' value="x" ng-click="$emit('remove', song)"></td>
-    <!--  ng-click="$emit('remove', song)" -->
-</tr>
-
-
+<article class="style1">
+    <span class="image">
+        <img src="static/images/pic01.jpg" alt="" />
+    </span>
+    <a href="#/song/{{song.id}}">
+        <h2>{{song.name}}</h2>
+        <div class="content">
+            <p>{{song.artist}} - {{song.duration | duree}}</p>
+            <p>{{song.album}} - {{song.year}}</p>
+        </div>
+    </a>
+</article>

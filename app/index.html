@@ -1,29 +1,87 @@
+<!DOCTYPE HTML>
 <html>
     <head>
-        <title>Exercice</title>
-        <meta charset="utf-8">
+        <title>Mp3 Organizer</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="static/assets/css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    </head>
+    <body ng-app="MyApp">
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <div class="inner">
+
+                    <!-- Logo -->
+                    <a href="#" class="logo">
+                        <span class="symbol"><img src="static/images/logo.svg" alt="" /></span><span class="title">Mp3 Organizer</span>
+                    </a>
+
+                    <!-- Nav -->
+<!--                    <nav>
+                        <ul>
+                            <li><a href="#menu">Menu</a></li>
+                        </ul>
+                    </nav>-->
+
+                </div>
+            </header>
+
+            <!-- Menu -->
+<!--            <nav id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="generic.html">Ipsum veroeros</a></li>
+                    <li><a href="generic.html">Tempus etiam</a></li>
+                    <li><a href="generic.html">Consequat dolor</a></li>
+                    <li><a href="elements.html">Elements</a></li>
+                </ul>
+            </nav>-->
+
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+                    <header>
+                        <h1>Gestionnaire de MP3</h1>
+                        <p>Découvrez la nouvelle génération du gestionnaire de MP3 avec stockage en base de données !</p>
+                    </header>
+
+                    <ng-view></ng-view>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <ul class="copyright">
+                        <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="static/assets/js/jquery.min.js"></script>
+        <script src="static/assets/js/skel.min.js"></script>
+        <script src="static/assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="static/assets/js/main.js"></script>
         <script src="angular.js"></script>
         <script src="angular-route.js"></script>
         <script src="utils.js"></script>
-        
+
         <script src="app.js"></script>
         <script src="controllers.js"></script>
         <script src="directives.js"></script>
         <script src="filters.js"></script>
-        
-        <style>
-        table td
-            {
-                padding:10px;
-                border:solid 1px;
-            }
-        </style>
-    </head>
-    <body ng-app="MyApp">  
-      
-        <ng-view></ng-view>
-       
-        
-        
+
     </body>
 </html>
