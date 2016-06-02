@@ -60,7 +60,7 @@ angular.module("mycontrollers", [])
     {
         $location.path("/"); 
     };
-    
+
     $scope.onSave = function()
     {
         for (var i = 0; i < $rootScope.songs.length; i++)
@@ -72,7 +72,7 @@ angular.module("mycontrollers", [])
             }
         }
 
-        $http.put("/medias/" + songid, $scope.song ).success( function(){
+        $http.put("/medias/" + songid, {previousSong : song, newSong : $scope.song} ).success( function(){
             $location.path("/");
         })
         
