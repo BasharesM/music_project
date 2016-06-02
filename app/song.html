@@ -1,0 +1,26 @@
+<h1>Details</h1>
+
+Nom : <input type="text" ng-model="song.name">
+<br>
+Artiste : <input type="text" ng-model="song.artist">
+<br>
+Album : <input type="text" ng-model="song.album">
+<br>
+Année : <input type="text" ng-model="song.year">
+<br>
+Durée : <input type="text" ng-model="song.duration">
+<br>
+<input type="button" value="Cancel" ng-click="onCancel()">
+<input type="button" value="Sauver" ng-click="onSave()">
+
+<!--
+Créer un formulaire pour pouvoir modifier la chanson fournie
+le formulaire doit avoir deux boutons : Sauver, annuler
+- Sauver permet de sauver les modifications
+- Annuler permet d'annuler les modifications
+
+Ca permet de retourner à la liste de chansons
+
+Indication : créer un clone de la donnée (si possible utiliser angular)
+
+-->
