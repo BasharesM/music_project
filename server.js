@@ -15,4 +15,4 @@ app.use( express.static(path.join(__dirname + "/app")));
 
 app.use("/medias", media);
 
-app.listen(8000);
+app.listen(3000);
