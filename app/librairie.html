@@ -1,4 +1,9 @@
 <div >
+<br>
+	Recherche <input type="text" ng-model="recherche">
+
+<br><br>
+
 <table>
     <tr>
         <td>Nom</td>
@@ -8,6 +13,6 @@
         <td>Durée</td>
         <td></td>
     </tr>
-    <tr row ng-repeat="song in songs"></tr>
+    <tr row ng-repeat="song in songs | filter:recherche "></tr>
 </table>
 </div>
