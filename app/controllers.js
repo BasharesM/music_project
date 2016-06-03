@@ -8,6 +8,7 @@ angular.module("mycontrollers", [])
     //$scope.songs = mp3Model.librairie.songs;
     
     //if ($rootScope.songs == undefined){
+        getMedia();
 
         $interval(getMedia,5000);
         
