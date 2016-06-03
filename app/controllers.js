@@ -3,7 +3,8 @@ angular.module("mycontrollers", [])
     
 //$route, $location, $routeParams, $routeProvider
 
-.controller("LibrairieController", function($rootScope, $http,$interval)
+
+.controller("LibrairieController", function($rootScope, $http, $interval, $location)
 {    
     //$scope.songs = mp3Model.librairie.songs;
     
@@ -15,7 +16,6 @@ angular.module("mycontrollers", [])
 
         function getMedia(){
             $http.get("/medias").success(function(data){
-                console.log("get in");
                 $rootScope.songs = data;
                 
             });
@@ -23,13 +23,51 @@ angular.module("mycontrollers", [])
 
 
      // coder la suppression d'un mp3
-
-    //$scope.onRemove = function(song)
     $rootScope.$on("remove", function(event, song){
         
        $rootScope.songs.removeItemByID(song); 
        $http.delete("/medias/" + song.id);
        
+    });
+
+    function playNewSong(songId)
+    {
+        var urlOfApi = "http://localhost:3000/files/"+songId;
+        $rootScope.audio = new Audio(urlOfApi);
+        $rootScope.audio.play();
+    }
+
+    // jouer une musique
+    $rootScope.$on("play", function(event, song){
+
+        console.log(event);
+
+        if ($rootScope.audio)
+        {
+            $rootScope.audio.pause();
+            setTimeout(function () {      
+               playNewSong(song.id);
+            }, 150);
+        }
+        else
+            playNewSong(song.id);
+
+    });
+
+    $rootScope.$on("pause", function(event, song){
+
+        if ($rootScope.audio)
+        {
+            $rootScope.audio.pause();
+        }
+
+    });
+
+    $rootScope.$on("update", function(event, song){
+
+        
+     $location.path("/song/"+song.id);
+
     });
 })
 

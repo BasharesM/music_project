@@ -2,11 +2,14 @@
     <span class="image">
         <img src="static/images/pic01.jpg" alt="" />
     </span>
-    <a href="#/song/{{song.id}}">
+    <a>
         <h2>{{song.name}}</h2>
         <div class="content">
             <p>{{song.artist}} - {{song.duration | duree}}</p>
             <p>{{song.album}} - {{song.year}}</p>
+            <button ng-click="$emit('play', song)">Jouer</button>
+            <button ng-click="$emit('pause', song)">Pause</button><br>
+            <button ng-click="$emit('update', song)">Modifier</button>
             <button ng-click="$emit('remove', song)">Supprimer</button>
         </div>
     </a>
