@@ -3,17 +3,23 @@ angular.module("mycontrollers", [])
     
 //$route, $location, $routeParams, $routeProvider
 
-.controller("LibrairieController", function($rootScope, $http)
+.controller("LibrairieController", function($rootScope, $http,$interval)
 {    
     //$scope.songs = mp3Model.librairie.songs;
     
     //if ($rootScope.songs == undefined){
+
+        $interval(getMedia,5000);
         
-        $http.get("/medias").success(function(data){
-            $rootScope.songs = data;
-        });
-        
-    //}
+
+        function getMedia(){
+            $http.get("/medias").success(function(data){
+                console.log("get in");
+                $rootScope.songs = data;
+                
+            });
+        }
+
 
      // coder la suppression d'un mp3
 
